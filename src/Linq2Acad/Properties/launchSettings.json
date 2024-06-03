@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Linq2Acad": {
+      "commandName": "Project",
+      "hotReloadEnabled": false
+    }
+  }
+}

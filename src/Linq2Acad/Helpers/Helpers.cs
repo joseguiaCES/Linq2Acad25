@@ -15,6 +15,11 @@ namespace Linq2Acad
   /// </summary>
   internal static class Helpers
   {
+    // Disable the warning.
+#pragma warning disable SYSLIB0011
+    //BinaryFormatter, you should migrate away from it due to its security and reliability flaws
+    //https://learn.microsoft.com/en-us/dotnet/fundamentals/syslib-diagnostics/syslib0011
+
     /// <summary>
     /// Uses the top transaction in the transaction manager and performs the given action using the transaction.
     /// If now transaction is avialable, a new transaction is started.
@@ -153,5 +158,8 @@ namespace Linq2Acad
         return (T)formatter.Deserialize(memoryStream);
       }
     }
+
+    // Re-enable the warning.
+#pragma warning restore SYSLIB0011
   }
 }
